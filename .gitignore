@@ -1,1 +1,7 @@
-node_modules
+node_modules/
+coverage/
+.vscode/
+
+tmp/*
+!tmp/.gitkeep
+src/config/auth.ts
