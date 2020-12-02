@@ -89,24 +89,4 @@ order: RF -> RN -> RNF
 - The user cannot schedule a new appointment with itself;
 
 
-### Steps
-1. Crie a estrutura dos arquivos que vao precisar sem inserir as regras de negocio (service)
-Ex: Recuperacao de senha
-- Crio arquivo de Service e o teste com a estrutura mais basica
-- Crio o provider (1. model, 2. fakes, 3. implementations)
 
-- TDD = fail -> passed -> refactor
-Fazer o teste mais simples possivel, algo muito isolado.
-
-1. Macros: service -> entities, interface, fakeRepository (tests)
-
-service and test ->
-
-Apos testes estarem passando, vamos implementar as funcionalidades em development
-
-1. Route and Controller
-2. Token Repository (typeORM)
-3. Create token migrations
-4. Email Provider (development/implementation)
-5. Register Providers in container (dependency injection)
-6. Test Everything
