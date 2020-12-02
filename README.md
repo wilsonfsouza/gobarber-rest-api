@@ -27,14 +27,16 @@ order: RF -> RN -> RNF
 - Use Amazon SES to sending emails in production;
 - The email service must happen as a background job (microservice - fila);
 
-**RN**
+**RN** -> pelo menos 1 teste por RN
 
+- Identify user that is trying to reset password (to avoid having an user reseting the password of another user)
+- Need to store reset password tokens
 - The url sent by email to reset the password must expire within 2h;
-- The user must confirm its new password after reseting the password;
+- The user must confirm its new password after reseting the password; (validacao nao precisa ir dentro do service, vamos criar um middleware)
 
 
 ### Atualizacao do perfil (use module)
-
+-> como service nao sabe que estamos usando o express (estavamos passando o user_id pelo header da request), precisamos mandar ele pelo user_id
 **RF**
 
 - The user must be able to update its profile (name, email, and password)
@@ -45,7 +47,7 @@ order: RF -> RN -> RNF
 
 - The user cannot change its email to another email already in use;
 - To update the password, the user must inform its old password;
-- To update the password, the user must confirm the new password;
+- To update the password, the user must confirm the new password; (teste na area de validacao)
 
 ### Painel do prestador (workers)
 
@@ -90,3 +92,21 @@ order: RF -> RN -> RNF
 ### Steps
 1. Crie a estrutura dos arquivos que vao precisar sem inserir as regras de negocio (service)
 Ex: Recuperacao de senha
+- Crio arquivo de Service e o teste com a estrutura mais basica
+- Crio o provider (1. model, 2. fakes, 3. implementations)
+
+- TDD = fail -> passed -> refactor
+Fazer o teste mais simples possivel, algo muito isolado.
+
+1. Macros: service -> entities, interface, fakeRepository (tests)
+
+service and test ->
+
+Apos testes estarem passando, vamos implementar as funcionalidades em development
+
+1. Route and Controller
+2. Token Repository (typeORM)
+3. Create token migrations
+4. Email Provider (development/implementation)
+5. Register Providers in container (dependency injection)
+6. Test Everything
