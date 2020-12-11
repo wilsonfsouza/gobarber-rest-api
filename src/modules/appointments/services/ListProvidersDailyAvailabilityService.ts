@@ -1,7 +1,5 @@
 import { inject, injectable } from 'tsyringe';
 import { getHours, isAfter } from 'date-fns';
-// import User from '@modules/users/infra/typeorm/entities/User';
-// import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 import IAppointmentsRepository from '@modules/appointments/repositories/iAppointmentsRepository';
 
 interface IRequest {
@@ -19,7 +17,7 @@ type IResponse = Array<{
 @injectable()
 class ListProvidersDailyAvailabilityService {
   constructor(
-    @inject('AppointmentsRespository')
+    @inject('AppointmentsRepository')
     private appointmentsRepository: IAppointmentsRepository,
   ) { }
 
