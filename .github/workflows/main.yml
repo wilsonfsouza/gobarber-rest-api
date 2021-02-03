@@ -43,8 +43,11 @@ jobs:
           key: ${{ secrets.SSH_KEY }} 
           source: "., !node_modules"
           target: "~/app/gobarber-rest-api"
-    
-      - name: Install dependencies on Digital Ocean via ssh
+      
+      # 1. Install dependencies on Digital Ocean via ssh with yarn
+      # 2. Run typeorm migrations on Digital Ocean via ssh
+      # 3. Restart Node.js server using PM2 via ssh
+      - name: Run production scripts
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
@@ -54,23 +57,5 @@ jobs:
           script: |
             cd ~/app/gobarber-rest-api
             yarn 
-      
-      - name: Run typeorm migrations on Digital Ocean via ssh
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          port: ${{ secrets.SSH_PORT }}
-          key: ${{ secrets.SSH_KEY }} 
-          script: |
-            cd ~/app/gobarber-rest-api
             ./node_modules/.bin/typeorm migration:run 
-            
-      - name: Restart Node.js server using PM2 via ssh
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          port: ${{ secrets.SSH_PORT }}
-          key: ${{ secrets.SSH_KEY }} 
-          script: pm2 restart gobarber-api
+            pm2 restart gobarber-api
