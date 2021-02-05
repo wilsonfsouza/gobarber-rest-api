@@ -1,6 +1,6 @@
 <p align="center">
   <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/wilsonfsouza/gobarber-rest-api">
-  <a href="https://github.com/wilsonfsouza/happy-frontend-web/commits/main">
+  <a href="https://github.com/wilsonfsouza/gobarber-rest-api/commits/master">
     <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/wilsonfsouza/gobarber-rest-api">
   </a>
 
@@ -35,7 +35,10 @@ Table of Contents
 
 This is the backend REST API made with Node.js, Express, and TypeScript for the GoBarber project. GoBarber is a web application for appointment scheduling designed for barbershops and hair salons.
 
-By signing up, clients can schedule a new appointment with all available stylists working at the business. On the other hand, registered stylists have access to a web interface to manage their schedules with real-time updates (new or canceled appointments).
+By signing up, users can schedule a new appointment with all available stylists working at the business. On the other hand, registered stylists have access to a web interface to manage their schedules with real-time updates (new or canceled appointments).
+
+To see the **web client**, click here: [GoBarber Web](https://github.com/wilsonfsouza/gobarber-frontend-web)<br />
+To see the **mobile client**, click here: [GoBarber Mobile](https://github.com/wilsonfsouza/appbarbershop)
 
 ---
 
