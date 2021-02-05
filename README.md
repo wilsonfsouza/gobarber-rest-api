@@ -55,7 +55,7 @@ Initial requirements:
 # Clone this repository
 $ git clone https://github.com/wilsonfsouza/gobarber-rest-api.git
 
-# Access the folder in your terminal/cmd/cli
+# Access the folder in your terminal
 $ cd gobarber-rest-api
 
 # Install all dependencies
