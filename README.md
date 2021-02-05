@@ -165,10 +165,10 @@ This app has open and private routes. Private routes expect a **Bearer token** i
 
 ## ⚙️ Tests
 ```bash
-# Run tests with docker containers running
+# Running tests
 $ yarn test
 
-# Your can generate the test coverage with the following command
+# Generating test coverage
 $ yarn test --coverage
 ```
 ---
