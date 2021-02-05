@@ -118,7 +118,6 @@ $ docker run --name gobarber-redis -p 6379:6379 -d -t redis:alpine
 |MAIL_DRIVER|Indicate what email service use to send messages, the possible values are `ethereal` and `ses`, to use the [SES](https://aws.amazon.com/ses/) service remember to to configure the `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_DEFAULT_REGION` keys.|`ethereal`
 |AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY|These keys are necessary to AWS allow the application to use the S3 and SES services throught API. See how to get yours keys here: [Set up AWS Credentials](https://docs.aws.amazon.com/toolkit-for-eclipse/v1/user-guide/setup-credentials.html).| -
 |AWS_DEFAULT_REGION|You can see your default region in the navigation bar at the top right after login in the [AWS Management Console](https://sa-east-1.console.aws.amazon.com/console/home). Read [AWS service endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html) to know more about regions.| -
-|AWS_S3_BUCKET_NAME|Amazon S3 stores data as objects within buckets. To create a bucket see [Creating a bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html).|gobarber
 |STORAGE_DRIVER| Indicate where the users's avatar will be stored, the possible values are `disk` and `s3`, to store into [S3](https://aws.amazon.com/s3/) remember to configure all the `AWS_*` keys. | disk
 |REDIS_HOST|Redis host.|`localhost`
 |REDIS_PORT|Redis port.|`6379`
@@ -142,13 +141,13 @@ This app has open and private routes. Private routes expect a **Bearer token** i
 ### Users
 |Route|HTTP Method|Params|Description|Auth method
 |---|---|---|---|---
-|`/sessions`|POST|Body with user's email and password.|Authenticates user, return a Bearer Token and user's id and email.
-|`/users`|POST|Body with user's name, email, and password.|Sign up for new users.
+|`/sessions`|POST|Body with user's email and password.|Authenticates user, return a Bearer Token and user's id and email.| ❌
+|`/users`|POST|Body with user's name, email, and password.|Sign up for new users. | ❌
 |`/profile`|GET| - |Shows user profile.|Bearer
 |`/profile`|PUT|Body with user `name`, `email`, `old_password`, `password`, and `password_confirmation`.|Updates user information.|Bearer
 |`/users/avatar`|PATCH|Multipart payload with a `avatar` field with a image.|Update user avatar.|Bearer
-|`/password/forgot`|POST|Body with user's `email`.|Sends to user the reset password email.
-|`/password/reset`|POST|Body with user's new `password` and `password_confirmation`.|Resets user's password.
+|`/password/forgot`|POST|Body with user's `email`.|Sends to user the reset password email.| ❌
+|`/password/reset`|POST|Body with user's new `password` and `password_confirmation`.|Resets user's password.| ❌
 
 ### Appointments
 |Route|HTTP Method|Params|Description|Auth method
@@ -181,10 +180,11 @@ The following tools were used in this project:
 - [TypeScript](https://www.typescriptlang.org/)
 - [Express](https://expressjs.com/pt-br/)
 - [Docker](https://www.docker.com/)
-- [Multer](https://github.com/expressjs/multer)
-- [TypeORM](https://typeorm.io/#/)
 - [JWT-token](https://jwt.io/)
 - [Uuid v4](https://github.com/thenativeweb/uuidv4/)
+- [Multer](https://github.com/expressjs/multer)
+- [AWS SDK](https://aws.amazon.com/getting-started/tools-sdks/)
+- [TypeORM](https://typeorm.io/#/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [MongoDB](https://www.mongodb.com/)
 - [Redis / ioredis](https://github.com/luin/ioredis)
