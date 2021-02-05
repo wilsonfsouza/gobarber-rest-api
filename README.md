@@ -141,7 +141,7 @@ This app has open and private routes. Private routes expect a **Bearer token** i
 
 ### Users
 |Route|HTTP Method|Params|Description|Auth method
-|:---|:---:|:---:|:---:|:---:|:---:
+|---|---|---|---|---
 |`/sessions`|POST|Body with user's email and password.|Authenticates user, return a Bearer Token and user's id and email.
 |`/users`|POST|Body with user's name, email, and password.|Sign up for new users.
 |`/profile`|GET| - |Shows user profile.|Bearer
@@ -152,7 +152,7 @@ This app has open and private routes. Private routes expect a **Bearer token** i
 
 ### Appointments
 |Route|HTTP Method|Params|Description|Auth method
-|:---|:---:|:---:|:---:|:---:|:---:
+|---|---|---|---|---
 |`/appointments`|POST|Body with appointment `provider_id` and `date`.|Schedules a new appointment.|Bearer
 |`/appointments/me`|GET|`day`, `month` and `year` query parameters.|Returns user's scheduled appointments in a specific date.|Bearer
 |`/providers`|GET|`page` query parameter.|Lists providers.|Bearer
