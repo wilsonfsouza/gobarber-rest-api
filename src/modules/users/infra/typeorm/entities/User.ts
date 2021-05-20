@@ -36,7 +36,7 @@ class User {
   @Expose({ name: 'avatar_url' })
   getAvatarUrl(): string | null {
     if (!this.avatar) {
-      return null;
+      return `https://${uploadConfig.config.aws.bucket}.s3.amazonaws.com/avatar-placeholder.png`;
     }
 
     switch (uploadConfig.driver) {
