@@ -42,6 +42,18 @@ To see the **mobile client**, click here: [GoBarber Mobile](https://github.com/w
 
 ---
 
+## 🔥 Preview
+
+Demo credentials:
+<br />
+
+acc: peppa@test.com / password: demo-password-peppa
+<br />
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://gobarberweb.wilsonfranca.dev/)
+
+---
+
 ## 🚀 [](https://github.com/wilsonfsouza/gobarber-rest-api#how-to-run-the-project)How to run the project
 
 ### **Requirements**
